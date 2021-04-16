@@ -1,5 +1,8 @@
 :root{
   --base:#ffffff;
+  --handColor:#000000;
+  --clockSize:30rem;
+  --shape: 50%;
 }
 
 html {
@@ -32,11 +35,11 @@ vertical-align: text-top;
 font-family: 'helvetica neue', sans-serif;
 font-weight: 100;
 font-size: 20px;
-width: 30rem;
-height: 30rem;
+width: var(--clockSize);
+height: var(--clockSize);
 border: 20px solid ;
 border-color: var(--base);
-border-radius: 50%;
+border-radius:var(--shape);
 margin: 50px auto;
 position: relative;
 padding: 2rem;
@@ -60,7 +63,7 @@ transform: translateY(-3px); /* account for the height of the clock hands */
 .hand {
 width: 50%;
 height: 6px;
-background: black;
+background:var(--handColor);
 position: absolute;
 top: 50%;
 transform-origin: 100%;
