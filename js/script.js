@@ -1,7 +1,8 @@
 const secHand = document.querySelector('.second')
 const minHand = document.querySelector('.min')
 const hourHand = document.querySelector('.hour')
-const ip = document.querySelector('.cl input')
+const ip = document.querySelectorAll('.cl input')
+console.log(ip);
 function setDate() {
     const now  = new Date();
     const sec = now.getSeconds();
@@ -19,9 +20,9 @@ function setDate() {
 
 }
 function color() {
-    
-    document.documentElement.style.setProperty(`--${this.name}`,this.value);
+    const suffix = this.dataset.sizing || '';
+    document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
     
 }
-ip.addEventListener('change',color)
+ip.forEach(ip => ip.addEventListener('change',color));
 setInterval(setDate,1000)
